@@ -1,0 +1,35 @@
+{
+  "name": "ml-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:ci": "cypress run",
+    "cy:open": "cypress open",
+    "style": "prettier . --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiubcn/ml-assignment.git"
+  },
+  "author": "Sergiu B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiubcn/ml-assignment/issues"
+  },
+  "homepage": "https://github.com/sergiubcn/ml-assignment#readme",
+  "dependencies": {
+    "cypress": "^14.0.3",
+    "eslint-plugin-cypress": "^4.1.0",
+    "prettier": "^3.5.1",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "globals": "^15.15.0",
+    "typescript-eslint": "^8.24.1"
+  }
+}
