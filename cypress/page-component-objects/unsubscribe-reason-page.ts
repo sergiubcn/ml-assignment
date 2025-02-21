@@ -15,7 +15,8 @@ export const unsubscribeReasonPage = () => ({
    * Selects the "no longer want to receive" reason, confirms the action and waits for the confirmation text.
    */
   selectReasonAndUnsubscribe: (): void => {
-    unsubscribeReasonPageElements.noLongerWantRadioButton().click();
+    // The radio button seems to be covered by a hidden element.
+    unsubscribeReasonPageElements.noLongerWantRadioButton().click({ force: true });
     unsubscribeReasonPageElements.confirmUnsubscribeButton().click();
     unsubscribeReasonPageElements.confirmUnsubscribeText().should("be.visible");
   },

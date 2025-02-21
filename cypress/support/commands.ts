@@ -38,6 +38,7 @@ declare global {
       getTestMailEmails(
         timestamp: number,
       ): Cypress.Chainable<Cypress.Response<any>>;
+      getUnsubscribeLinkFromEmailBody(emailBody: string): string;
       subscribeUserViaAPI(
         email: string,
         group: string,
@@ -86,6 +87,15 @@ Cypress.Commands.add(
       url: Cypress.env("testmail_rest_url"),
     });
   },
+);
+
+Cypress.Commands.add(
+  "getUnsubscribeLinkFromEmailBody",
+  (emailBody: string): string => {
+    const rx = /(?:unsubscribe:\\n)(.*)(?:\\n)/g;
+    const link = rx.exec(emailBody);
+    return link[0];
+  }
 );
 
 Cypress.Commands.add("dismissCookieBanner", () => {

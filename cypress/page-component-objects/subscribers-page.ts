@@ -18,7 +18,7 @@ export const subscribersPage = () => ({
    * @returns A list of unsubscriber anchors.
    */
   getUnsubscribers: (): Cypress.Chainable<JQuery<HTMLElement>> => {
-    subscribersPageElements.subscribersFilterDropdown().click();
+    subscribersPageElements.subscribersFilterDropdown().contains("Active").click();
     // Ideally we'd use a unique test-id instead of repeating ones.
     subscribersPageElements
       .subscribersFilterOption()
